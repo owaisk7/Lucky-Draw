@@ -1,0 +1,298 @@
+#SubmitButton{
+background-color: #ffccd5;
+color: #ff99aa;
+border-color: #FF5693;
+border-width: 3px;
+
+}
+#PreviewBox{
+background-color: #e4e4e4;    
+color: #7f7f7f;;
+overflow:hidden;
+border:1px solid white;
+border-radius:15px ;
+margin:3em;
+padding:1em;
+padding-left: 2em;
+padding-right: 2em;
+
+}
+#PreviewBox a{
+color: #786D6D;
+
+}
+#Lucky_Draw_Name_Preview{
+font-size: 35px;
+text-align: left;
+}
+
+#Lucky_Draw_Desc_Preview{
+  text-align: left;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+#registerbutton,#closebutton{
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border: none;
+    width:65%;
+    
+
+}
+#closebutton{
+    width:30%;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+.dt-input{
+min-width:55px;
+max-width:200px;
+margin-right:10px;
+margin-left:10px;
+
+}
+
+.prizecontainerbox {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+#Lucky_Draw_Name,#Lucky_Draw_Desc{
+
+    border:1px solid #FF5693;
+    outline: none;
+}
+#Lucky_Draw_Name:focus{
+
+    outline: none;
+}
+
+#luckydrawtables {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#luckydrawtables td, #luckydrawtables th {
+  padding: 8px;
+}
+#luckydrawtables td{
+    padding: 1em;
+    color: #7f7f7f;
+
+}
+
+#luckydrawtables tr:hover {background-color: #f5f5f5;}
+
+#luckydrawtables th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0098d7 ;
+  color:white;
+  padding: 1.5em;
+  min-width:7em;
+}
+#luckydrawtablebutton,#luckydrawtablestatus{
+padding: 0.5em;
+padding-left: 1.5em;
+padding-right: 1.5em;
+font-weight: bold;
+font-size: 1em;
+border:none;
+color:white;
+background-color: #3498DB ;
+transition: 0.3s;
+}
+#luckydrawtablestatus{
+background-color: white;
+border: 1px solid #3498DB;
+color:black;
+border-radius: 35px;
+
+}
+#luckydrawtablebutton:hover{
+background-color:#2980B9 ;
+transition: 0.3s;
+}
+#luckydrawtablestatus:hover{
+border: 1px solid ;
+}
+#luckydrawnodrawfound{
+color: #3498DB;
+font-weight: bold;
+font-size:2em;
+margin-top:2em;
+height:2.5em;
+width:100%;
+text-align: center;
+}
+
+#luckydrawinput{
+    border: none; /* Removes the border */
+    background-color: #f4eded; /* Sets the background color to pink */
+    padding-left:15px;
+    padding-top:5px;
+    padding-bottom:5px; /* Optional: adds some padding for better text positioning */
+    color: #7f7f7f; /* Optional: sets the text color to black */
+    font-size: 16px; /* Optional: adjusts the font size */
+    width: 100%; /* Optional: makes the input take up the full width */
+    outline: none;
+    box-shadow: none;
+  }
+.luckydrawformcontainer {
+    color: #7f7f7f;
+width:100%;
+  background: #fff;
+}
+.luckydrawformcontainer a{
+    color:#dad3d3;
+    text-decoration: none;
+}
+.luckydrawformcontainer a:hover{
+    color: #7f7f7f;
+}
+select:hover option:hover {
+    background-color: red;
+    color: white;
+}
+
+#luckydrawinputcheckbox:checked{
+  background-color: #e5e5e5; 
+  color: #7f7f7f;
+}
+
+
+#luckydrawinputtext,#newldform{
+  
+  border: none; /* Removes the border */
+  background-color: #e5e5e5; /* Sets the background color to pink */
+  padding-left:15px;
+  padding-top:5px;
+  padding-bottom:5px; /* Optional: adds some padding for better text positioning */
+  color: #7f7f7f; /* Optional: sets the text color to black */
+  font-size: 16px; /* Optional: adjusts the font size */
+  width: 100%; /* Optional: makes the input take up the full width */
+  outline: none;
+  box-shadow: none;
+}
+.luckydrawsubmitbutton,.luckydrawpreviewbutton,#luckydrawsubmitbuttonpreview,#luckydrawclosebuttonpreview{
+padding: 0.5em;
+padding-left: 1.5em;
+padding-right: 1.5em;
+
+font-weight: bold;
+font-size: 1em;
+border:none;
+color: white;
+background-color:#3498DB;
+
+}
+.luckydrawsubmitbutton:hover{
+background-color:#2980B9;
+transition: 0.3s;
+}
+.luckydrawpreviewbutton{
+background-color: #FFFFFF;
+border:1px solid #7f7f7f;
+}
+.luckydrawpreviewbutton:hover{
+background-color:#e6b5c9;
+transition: 0.3s;
+border:1px solid #FFFFFF;
+}
+#luckydrawsubmitbuttonpreview,#luckydrawclosebuttonpreview{
+  background-color: #e6b5c9;
+}
+#luckydrawformnote{
+text-align: left;
+color:#7f7f7f;
+
+} 
+.ui-datepicker {
+    background: white;  /* White background */
+    border: none;  /* Remove the border around the entire datepicker */
+    border-radius: 5px;
+    padding: 10px;
+    width:25em;
+    text-align:center;
+  }
+  
+  /* Remove borders between date cells */
+  .ui-datepicker td {
+    background-color:white;
+    border: none;  /* Remove borders between the date cells */
+     /* Add padding for spacing */
+  }
+  
+  /* Style the date numbers */
+  .ui-datepicker td a {
+    color: #333;
+    width:3em;
+    padding-top:.5em;
+    padding-bottom:.5em;
+    background-color:white;
+    text-align:center;
+  }
+  
+  /* Style the highlighted date */
+  .ui-datepicker .ui-state-highlight {
+    background: #7f7f7f;  /* Blue for selected date */
+    color: white;
+  }
+  
+  /* Style the navigation buttons (previous, next) */
+  .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    background-color:pink;  /* Blue background for prev/next buttons */
+    border: none;
+    color: white;
+  }
+  
+  /* Style for month and year drop-down */
+  .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+    background-color: yellow;
+    color: #333;
+    
+  }
+  /* Hover effect for date cells */
+  .ui-datepicker td a:hover {
+    background-color:#7f7f7f;  /* Blue hover for date cells */
+    color:white;
+  }
+  .luckydrawsteps{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  
+  .luckydrawsteps li{
+    font-size: 2em;
+    display: inline-block;
+    margin: 20px;
+    color: #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .luckydrawsteps li.is-active{
+    transition: 0.3s;
+    border-bottom: 2px solid #7f7f7f;
+    color: #7f7f7f;
+  }
+
+  #luckydrawleftcontainer{
+width:45%;
+background-color: red;
+
+
+  }
