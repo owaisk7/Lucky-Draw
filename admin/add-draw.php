@@ -2,7 +2,6 @@
 if ( !defined('ABSPATH') ){
      die();
    }
- include_once Lucky_Draw_Plugin_Path.'includes/topnav.php'; echo '</div>'; 
 
    //Insert Draw When Submitted
    if(isset($_POST["Lucky_Draw_Submit"])){
@@ -15,55 +14,49 @@ if ( !defined('ABSPATH') ){
 ?>
 <div class="modal" id="myModal" style="z-index:9999999999999;">
   <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content">
+    <div class="modal-content" >
 
       <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Lucky Draw</h4>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      
-        <input type="button" value="submit" class="btn btn-primary me-md-2" id="Lucky_Draw_Submit_Button" type="button">
+      <div class="modal-header" style="width:100%;display:block;overflow:auto !important;padding:0px;">
+        <h4 class="modal-title" style="float:left;padding:10px;">Lucky Draw</h4> 
+        <form action="<?php echo wp_kses_post(Lucky_Draw_Home_URL).'admin.php?page=adddraw';  ?>" method="post" >
+          <input type="hidden" id="valuedrawtype" name="valuedrawtype" value="shortcode">
+          <input type="hidden" id="valuedrawfixed" name="valuedrawfixed">
+          <input type="hidden" id="valuedrawfixedheight" name="valuedrawfixedheight">
+          <input type="hidden" id="valuedrawfixedwidth" name="valuedrawfixedwidth">
+          <input type="hidden" id="valuedrawfixedposition" name="valuedrawfixedposition" value="Topleft">
+          <input type="hidden" id="valuedrawname" name="valuedrawname">
+          <input type="hidden" id="valuedrawurl" name="valuedrawurl">
+          <input type="hidden" id="valuedrawdesc" name="valuedrawdesc">
+          <input type="hidden" id="valuedrawdate" name="valuedrawdate">
+          <input type="hidden" id="valuedrawprizesku" name="valuedrawprizesku">
+          <input type="hidden" id="valuedrawprizetext" name="valuedrawprizetext">
+          <input type="hidden" id="valuedrawboxstyle" name="valuedrawboxstyle">
+          <input type="hidden" id="valuedrawboxdivider" name="valuedrawboxdivider">
+          <input type="hidden" id="valuedrawboxheading" name="valuedrawboxheading">
+          <input type="hidden" id="valuedrawdescription" name="valuedrawdescription">
+          <input type="hidden" id="valuedrawprize" name="valuedrawprize">
+          <input type="hidden" id="valuedrawcountdownnumber" name="valuedrawcountdownnumber">
+          <input type="hidden" id="valuedrawcountdowndays" name="valuedrawcountdowndays">
+          <input type="hidden" id="valuedrawbuttontext" name="valuedrawbuttontext">
+          <input type="hidden" id="valuedrawactionbutton" name="valuedrawactionbutton">
+          <input type="hidden" id="valuedrawclosebutton" name="valuedrawclosebutton">
+          <input type="hidden" id="valuedrawparticipationmail" name="valuedrawparticipationmail">
+          <input type="hidden" id="valuedrawlosingnmail" name="valuedrawlosingnmail">
+          <?php wp_nonce_field( "Lucky_Draw_Nonce", "Lucky_Draw_Nonce_Field");  ?>
+        <button type="submit"  id="luckydrawmodalsubmitbutton" id="Lucky_Draw_Submit_Button" name="Lucky_Draw_Submit" ><i class="fa-solid fa-floppy-disk"></i> Submit</button>
+        <button type="button"id="luckydrawmodalclosebutton"type="button"  data-bs-dismiss="modal">Close</button>
         </form>
-  <button class="btn btn-primary" type="button">Button</button>
-</div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body" style="background-color:white;">       
-<!-- Include Draw Details Page If style and prize is not set in url  
- Draw Details is the page to enter name desc and date etc.-->     
-     
-  <?php
+      <div class="modal-body" style="background-color:#ececec;margin:0px;padding:0px">       
 
-  if(isset($_GET["next"])){
- $mode_set=$_GET["next"];
 
-  switch ($mode_set) {
-    case "details":
-      include_once Lucky_Draw_Plugin_Path.'admin/step2.php'; 
+      <?php include Lucky_Draw_Plugin_Path.'admin/admin-includes/tabs.php'; ?>
 
-      //code block
-      break;
-    case "prize":
-      //code block;
-      break;
-    case "submit":
-      include_once Lucky_Draw_Plugin_Path.'includes/putvalues.php'; 
-
-      //code block
-      break;
-     case "styles":
-      break; 
-    default:
-      //code block
-  }
-}else{
-  include_once Lucky_Draw_Plugin_Path.'admin/email.php'; 
-
-}
-?>
-
+    </div>     
+  
     </div>
   </div>
 </div>
@@ -72,31 +65,5 @@ if ( !defined('ABSPATH') ){
   var myModal = new bootstrap.Modal(document.getElementById('myModal'), {})
   myModal.toggle()
 </Script>
-<Script>
-  $(".Lucky_Draw_Name").keyup(function(){
-    var val=$(this).val();
-    $("#Lucky_Draw_Name_Preview").html(val)    
- 
-});
-$(".Lucky_Draw_Date").change(function(){
-    var val=$(this).val();
-    $("#Draw_Date_Preview").html(val)    
- 
-});
-$(".Lucky_Draw_Desc").keyup(function(){
-    var val=$(this).val();
-    var prize=$(".prize_text_1").val();
-    val = val.replace("{prize}","<span class='luckydrawprize'>"+prize+"</span>");
-    $("#Lucky_Draw_Desc_Preview").html(val);
-    
-});
-
-$(".prize_text_1").keyup(function(){
-
-    var val=$(".Lucky_Draw_Desc").val();
-    var prize=$(".prize_text_1").val();
-    val = val.replace("{prize}","<span class='luckydrawprize'>"+prize+"</span>");
-    $("#Lucky_Draw_Desc_Preview").html(val);
-});
 
 </Script>

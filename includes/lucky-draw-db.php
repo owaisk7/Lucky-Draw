@@ -11,14 +11,17 @@ require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     global $wpdb;
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     
-        
-     $sql_query_to_create_table = "CREATE TABLE ".$wpdb->prefix."lucky_draw (
+    $query = $wpdb->prepare( 'SHOW TABLES LIKE %s',Lucky_Draw_Database);
+
+if ( ! $wpdb->get_var( $query ) == Lucky_Draw_Database ) {
+    // go go
+     $sql_query_to_create_table = "CREATE TABLE ".Lucky_Draw_Database." (
                `id` int(11) NOT NULL AUTO_INCREMENT,
                 `draw_name` text NOT NULL,
                 `draw_desc` text NOT NULL,
                 `status` tinyint(1) NOT NULL,
-                `draw_create_date` date NOT NULL DEFAULT current_timestamp(),
-                `draw_date` date DEFAULT NULL,
+                `draw_create_date` TIMESTAMP  DEFAULT current_timestamp(),
+                `draw_date` date,
                 `placement` text NOT NULL,
                 `sendmail` text NOT NULL,
                 `no_of_winners` int(11) NOT NULL,
@@ -31,11 +34,14 @@ require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     
                 dbDelta($sql_query_to_create_table);     
 
-
+}
 
   //Create Table Lucky_Draw_Contestants 
     
-        $sql_query_to_create_table = "CREATE TABLE ".$wpdb->prefix."lucky_draw_contestants ( 
+  $query = $wpdb->prepare( 'SHOW TABLES LIKE %s',Lucky_Draw_Database2);
+
+  if ( ! $wpdb->get_var( $query ) == Lucky_Draw_Database2) {
+        $sql_query_to_create_table = "CREATE TABLE ".Lucky_Draw_Database2." ( 
                     `id` int(11) NOT NULL AUTO_INCREMENT,
                     `contest_id` int(11) NOT NULL,
                     `contestants` text NOT NULL,
@@ -45,3 +51,9 @@ require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4"; 
        
                    dbDelta($sql_query_to_create_table);
+  }
+
+
+
+
+

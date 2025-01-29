@@ -24,6 +24,13 @@ define("Lucky_Draw_Plugin_Path",plugin_dir_path( __FILE__ ));
 require_once Lucky_Draw_Plugin_Path.'includes/menus.php';
 
 
+function lucky_draw_table_creation(){
+  //Check if Tables exist .. if not then create .
+    
+ include_once (dirname(__FILE__).'../includes/lucky-draw-db.php');
+ 
+ }
+
 
 
 // Add Shortcode lucky_draw_view
@@ -47,14 +54,15 @@ return $html;
 include_once Lucky_Draw_Plugin_Path.'includes/lucky-draw-mail.php';
 
 // Include Lucky Draw COre Functions
-include_once Lucky_Draw_Plugin_Path.'includes/lucky-draw-main.php';
+
+ include_once Lucky_Draw_Plugin_Path.'includes/lucky-draw-main.php';
 
 //Styles 
 include_once Lucky_Draw_Plugin_Path.'lib/styles.php';
 
-
+$drawtype="";
 //Get Draw Type And Display Short Code
-$drawtype=lucky_draw_draw_type();
+//$drawtype=lucky_draw_draw_type();
 if($drawtype=="afteraddtocart"){
   function custom_content_after_add_to_cart() {
     // Custom content after the Add to Cart button
@@ -152,17 +160,21 @@ add_action( 'init',"lucky_draw_assets");
 
 
 //
-function lucky_draw_table_creation(){
- //Check if Tables exist .. if not then create .
-   
-include_once (dirname(__FILE__).'../includes/lucky-draw-db.php');
 
-}
 
 function lucky_draw_table_deletion(){
-    $wpdb->query("DROP TABLE ".$wpdb->prefix."lucky_draw"); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.SchemaChange
-    $wpdb->query("DROP TABLE ".$wpdb->prefix."lucky_draw_winners"); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.SchemaChange
-        
+  global $wpdb;
+  $query = $wpdb->prepare( 'SHOW TABLES LIKE %s',Lucky_Draw_Database);
+
+  if ( ! $wpdb->get_var( $query ) == Lucky_Draw_Database ) {
+    $wpdb->query("DROP TABLE ".Lucky_Draw_Database); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.SchemaChange
+      }
+      
+  $query = $wpdb->prepare( 'SHOW TABLES LIKE %s',Lucky_Draw_Database2);
+
+   if ( ! $wpdb->get_var( $query ) == Lucky_Draw_Database2 ) {   
+      $wpdb->query("DROP TABLE ".Lucky_Draw_Database2); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.SchemaChange
+      }
 }        
 //Create Tables When Plugin Activated    
 register_activation_hook(__FILE__,'lucky_draw_table_creation');

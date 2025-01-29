@@ -6,7 +6,7 @@ if ( !defined('ABSPATH') ){
 function lucky_draw_function(){
   
     //Add Menu
-            add_menu_page('Lucky Draw Menu Page','Lucky Draw','manage_options','lucky-draw','lucky_draw_adminpage','dashicons-money-alt',15);
+            add_menu_page('Lucky Draw Menu Page','Lucky Draw','manage_options','lucky-draw','lucky_draw_adminpage','dashicons-money-alt',45);
    
    
     //Add Submenus 
@@ -66,7 +66,7 @@ function lucky_draw_help(){
 
 function lucky_draw_demo(){
 
-     include (Lucky_Draw_Plugin_Path.'admin/email.php');
+     include (Lucky_Draw_Plugin_Path.'admin/add-new-draw.php');
 
 }
 

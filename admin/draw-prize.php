@@ -1,5 +1,4 @@
-<?php include_once Lucky_Draw_Plugin_Path.'includes/topnav.php'; echo '</div>';  
-
+<?php 
 if ( !defined('ABSPATH') ){
   die();
 }
@@ -120,7 +119,7 @@ echo '<td>'.wp_kses_post($drawname = $post->draw_name).'</td>';
 echo '<td>'.wp_kses_post($drawdate = $post->draw_date).'</td>';
 $drawprize=$post->prizes;
 $drawprize=unserialize($drawprize);
-echo '<td>'.wp_kses_post($drawprize["SKU1"]).'  '.wp_kses_post($drawprize["SKU2"]).'  '.wp_kses_post($drawprize["SKU3"]).'</td>';
+echo '<td>'.wp_kses_post($drawprize["SKU1"]).'</td>';
 
 echo '<td>';
 if($drawstatus = $post->status==1){

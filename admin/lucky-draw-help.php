@@ -2,7 +2,7 @@
 if ( !defined('ABSPATH') ){
     die();
   }
- include_once Lucky_Draw_Plugin_Path.'includes/topnav.php'; echo '</div>';  ?>
+  ?>
 
 <div class="container mt-5 px-5 ">
 

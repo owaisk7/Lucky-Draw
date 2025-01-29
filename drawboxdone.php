@@ -49,8 +49,7 @@ if($sendmail=="sendmail"){
       $to      = $current_user->user_email;
       $subject = $drawname." Participation ".$websitename;
       $headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
-      
-
+     
       lucky_draw_participation_mail($to,$partname,$subject,$drawname,$prizetext,$drawdate);
       // More headers
       
