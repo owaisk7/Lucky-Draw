@@ -18,6 +18,7 @@ foreach ($result as $post){
         $draw_id = $post->id;
         $draw_name = $post->draw_name;
         $drawtype=$post->draw_type;
+        $img_url=$post->img_url;
         $draw_desc=$post->draw_desc;
         $draw_date=$post->draw_date;
         $prizes=$post->prizes;
@@ -198,7 +199,7 @@ if($contestant_count==0){
 }elseif($drawtype["drawtype"]=="image"){
 ?>
   <div class="image-container">
-  <img height:=100%" width="100%"; src="http://localhost/luckydraw/wp-content/uploads/2017/09/blog-3-2-1.jpg" id="mainpreviewimage" alt="Image">
+  <img height:=100%" width="100%"; src="<?php echo $img_url; ?>" id="mainpreviewimage" alt="Image">
   <div class="overlay"></div>
   <form  id="luckydrawboxform" method="POST" action="<?php echo wp_kses_post(admin_url('admin-post.php')); ?>" >
           <input type="hidden" name="action" value="lucky_draw_participation_form">
@@ -215,11 +216,18 @@ if($contestant_count==0){
           <input id="mainvalue" type="text" value="<?php echo esc_attr($draw_name); ?>" name="drawname" >
 
           <input id="mainvalue" type="text" value="<?php echo esc_attr($draw_date); ?>" name="drawdate" >
+          class="imageregister-btn"
 
 
+          <?php if ( is_user_logged_in() ) { ?>
 
-  <button class="imageregister-btn" style="line-height:15px;padding:15px;margin-top:5%;margin-bottom:5%;<?php echo $stylebox["actionbutton"]; ?>" class="shortcodeiewactionbutton"><?php echo $stylebox["buttontext"]; ?></button>
-</form>
+<button style="width:auto;padding:0px 15px 0px 15px;margin-top:5%;margin-bottom:5%;<?php echo $stylebox["actionbutton"]; ?>;font-size:15px !important;" class="imageregister-btn"><?php echo $stylebox["buttontext"]; ?></button>
+
+<?php  } else {?>
+
+<button  class="imageregister-btn" id="registerbuttondisabled" style="width:auto;padding:0px 15px 0px 15px;;margin-top:5%;margin-bottom:5%;<?php echo $stylebox["actionbutton"]; ?>;font-size:15px !important;" >Please Log In</button>
+
+<?php }  ?></form>
 </div> 
 
 <?php 

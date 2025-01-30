@@ -1,8 +1,8 @@
 === Lucky Draw ===
 Contributors: owais4377
-Tags: lucky draw, giveaway, giveaway contests, prizes
+Tags: lucky draw, giveaway,forms, prizes
 Tested up to: 6.7
-Stable tag: 2.0.3
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,9 +15,8 @@ The **Lucky Draw Plugin** allows administrators to create exciting lucky draw ev
 ### Key Features:
 
 - **Admin Dashboard**: 
-  - Create and manage unlimited lucky draw events.
-  - Set draw dates, and configure participant registration rules.
-  - Draw Prizes.
+  - Create and manage unlimited Lucky Draw events.
+  - Set Draw dates, Draw Date and Draw Type .
 
 - **Participant Registration**: 
   - Allow users to register lucky draw by providing basic details like name, email.
@@ -105,13 +104,21 @@ Prizes will be displayed as either a link or text in the Draw Box description.
 
 == Screenshots ==
 
-1. Lucky Draw Dashboard
+1. Add Draw Page
 2. Draw Prize
-3. Add Draw Page
-4. Display Draw Box On Product Page
+3. Add Draw Dashboard
+4. Add Draw Settings Page
 
 
 == Changelog ==
+
+v3.0 
+Completely Redesigned Add Draw Page
+3 Types Of Draws Can Now Be added
+Add Draw Page is now completely in Ajax
+
+
+
 v2.0.3
 Bug Fixes
 Mail Styling Error on Mobile Devices

@@ -112,13 +112,11 @@ if ( !defined('ABSPATH') ){
     </h2>
     <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body" style="background-color:white;color:black;">
-    Lucky Draw Plugin allows admin to place draw box on 4 locations<br>
+    Lucky Draw Plugin allows admin to place draw box of 3 types<br>
         
     1.Shortcode -- This allows admin to place draw box anywhere with shortcode [lucky_draw_view]. <br>
-    2.Shortcode Display Absolute -- This allows admin to place draw box anywhere with shortcode but the box will
-      be displayed bottom right side above any other object. <br>
-    3.After Add To Cart Button -- This allows admin to place draw box below the add to cart button  <br>
-    4.After Order Completion  -- This allows admin to place draw box after the order has been placed .  
+    2.Popup -- The Draw is displayed as a popup when page loads.<br> 
+    3.Image --The Draw is displayed as an Image.
 
     </div>
     </div>
@@ -128,13 +126,12 @@ if ( !defined('ABSPATH') ){
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button" style="background-color:#3498DB;color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-      What is Product SKU & Display Prize As ?
+      What is Product SKU ?
       </button>
     </h2>
     <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body" style="background-color:white;color:black;">
       An SKU is a unique identifier for a product. Which can be found in Products Tab In Wordpress Admin<br>
-      Prizes will be displayed as <b>Link</b> or a <b>Text</b> in Draw Box Description<br>
         </div>
     </div>
   </div>

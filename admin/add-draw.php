@@ -4,12 +4,7 @@ if ( !defined('ABSPATH') ){
    }
 
    //Insert Draw When Submitted
-   if(isset($_POST["Lucky_Draw_Submit"])){
-    if(wp_kses_post(wp_unslash(isset($_POST["Lucky_Draw_Nonce_Field"])))&&wp_verify_nonce(wp_kses_post(wp_unslash($_POST["Lucky_Draw_Nonce_Field"])),'Lucky_Draw_Nonce')){ 
-      include_once Lucky_Draw_Plugin_Path.'includes/putvalues.php';
 
-  }else {  die; }
-}
 
 ?>
 <div class="modal" id="myModal" style="z-index:9999999999999;">
@@ -19,14 +14,14 @@ if ( !defined('ABSPATH') ){
       <!-- Modal Header -->
       <div class="modal-header" style="width:100%;display:block;overflow:auto !important;padding:0px;">
         <h4 class="modal-title" style="float:left;padding:10px;">Lucky Draw</h4> 
-        <form action="<?php echo wp_kses_post(Lucky_Draw_Home_URL).'admin.php?page=adddraw';  ?>" method="post" >
+        <form action="<?php echo wp_kses_post(Lucky_Draw_Home_URL).'admin.php?page=lucky-draw';  ?>" method="post" >
           <input type="hidden" id="valuedrawtype" name="valuedrawtype" value="shortcode">
           <input type="hidden" id="valuedrawfixed" name="valuedrawfixed">
           <input type="hidden" id="valuedrawfixedheight" name="valuedrawfixedheight">
           <input type="hidden" id="valuedrawfixedwidth" name="valuedrawfixedwidth">
           <input type="hidden" id="valuedrawfixedposition" name="valuedrawfixedposition" value="Topleft">
           <input type="hidden" id="valuedrawname" name="valuedrawname">
-          <input type="hidden" id="valuedrawurl" name="valuedrawurl">
+          <input type="hidden" id="valuedrawurl" name="valuedrawurl" value="<?php echo Lucky_Draw_Plugin_URL.'assets/img/default.jpg'; ?>">
           <input type="hidden" id="valuedrawdesc" name="valuedrawdesc">
           <input type="hidden" id="valuedrawdate" name="valuedrawdate">
           <input type="hidden" id="valuedrawprizesku" name="valuedrawprizesku">

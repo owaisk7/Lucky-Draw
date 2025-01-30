@@ -84,9 +84,9 @@ body {font-family: "Lato", sans-serif; margin:0px;}
 
   </div>
 
-  <div class="imagepreviewbody">
+  <div class="imagepreviewbody" style="margin-left:200px;margin-top:200px;">
   <div class="image-container">
-    <img src="http://localhost/luckydraw/wp-content/uploads/2017/09/blog-3-2-1.jpg" id="mainpreviewimage" alt="Image">
+    <img src="<?php echo Lucky_Draw_Plugin_URL.'assets/img/default.jpg'; ?>" id="mainpreviewimage" alt="Image">
     <div class="overlay"></div>
     <button class="imageregister-btn">Register Now</button>
   </div> 
@@ -204,29 +204,9 @@ var val=$("#selectdrawtype").val();
 
 
 
-$(".positionfixedshortcodehandw input").change(function(){
-var val6=$("#fixedpositionshortcodeheight").val()+"px";
-var val7=$("#fixedpositionshortcodewidth").val()+"px";
-$(".absolutebox").css('height',val6);
-$(".absolutebox").css('width',val7);
-
-valuedrawfixedheight
-$("#valuedrawfixedheight").val(val6);
-$("#valuedrawfixedwidth").val(val7);
-
-});
 
 
 </script>
 <Script>
-  $(document).ready(function(){
-    $(".LDshortcodeisselected").hide();
-    $(".LDpopupisselected").hide();
-    $(".LDimageisselected").hide();
-    $(".absoluteselected").hide();
-    $(".imagepreviewbody").hide();
-
-
-
-});
+ 
 </Script>

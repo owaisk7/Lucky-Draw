@@ -1,4 +1,28 @@
 
+$(document).ready(function(){
+    $(".LDshortcodeisselected").hide();
+    $(".LDpopupisselected").hide();
+    $(".LDimageisselected").hide();
+    $(".absoluteselected").hide();
+    $(".imagepreviewbody").hide();
+    $("#LDdrawurlbox").hide();
+
+
+
+});
+$(".positionfixedshortcodehandw input").change(function(){
+    var val6=$("#fixedpositionshortcodeheight").val()+"px";
+    var val7=$("#fixedpositionshortcodewidth").val()+"px";
+    $(".absolutebox").css('height',val6);
+    $(".absolutebox").css('width',val7);
+    
+    valuedrawfixedheight
+    $("#valuedrawfixedheight").val(val6);
+    $("#valuedrawfixedwidth").val(val7);
+    
+    });
+    
+
 //Main Menu Buttons
 $(".tabcontentinline button").click(function(){
 
@@ -506,7 +530,7 @@ $("#valuedrawbuttontext").val(val1);
 //Action Settings
 var val1="background-color:"+$("#actionbuttonbgcolor").val()+" !important;";
 var val2="color:" +$("#actionbuttoncolor").val()+" !important;";
-var  val3="font-size:"+$("#actionbuttonborderradius").val()+"px !important";
+var  val3="border-radius:"+$("#actionbuttonborderradius").val()+"px !important";
 $("#valuedrawactionbutton").val(val1+val2+val3);
 
 //Close Button

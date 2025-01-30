@@ -92,7 +92,7 @@ $boxstyle=array(
 
 $boxstyle=serialize($boxstyle);
 
-echo $valuedrawdate=date('Y-m-d', strtotime($valuedrawdate));
+$valuedrawdate=date('Y-m-d', strtotime($valuedrawdate));
 
 
 
@@ -103,6 +103,7 @@ array(
   'draw_type'=>$drawtype,
   'draw_name' => $valuedrawname,
   'draw_desc' => $valuedrawdesc,
+  'img_url'=>$valuedrawurl,
   'status' => 1,
    'draw_date'=> $valuedrawdate,
    'sendmail'=>$mailing,

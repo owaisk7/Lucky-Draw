@@ -16,20 +16,23 @@ require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 if ( ! $wpdb->get_var( $query ) == Lucky_Draw_Database ) {
     // go go
      $sql_query_to_create_table = "CREATE TABLE ".Lucky_Draw_Database." (
-               `id` int(11) NOT NULL AUTO_INCREMENT,
-                `draw_name` text NOT NULL,
-                `draw_desc` text NOT NULL,
-                `status` tinyint(1) NOT NULL,
-                `draw_create_date` TIMESTAMP  DEFAULT current_timestamp(),
-                `draw_date` date,
-                `placement` text NOT NULL,
-                `sendmail` text NOT NULL,
-                `no_of_winners` int(11) NOT NULL,
-                `prizes` text NOT NULL,
-                `box_style` text NOT NULL,
-                `winner_name` text NOT NULL,
-                `winner_email` text NOT NULL,
-                PRIMARY KEY (`id`)
+               CREATE TABLE `wp_lucky_draw` (
+                    `id` int NOT NULL AUTO_INCREMENT,
+                    `draw_type` text NOT NULL,
+                    `img_url` text NOT NULL,
+                    `draw_name` text NOT NULL,
+                    `draw_desc` text NOT NULL,
+                    `status` tinyint(1) NOT NULL,
+                    `draw_create_date` timestamp NULL DEFAULT current_timestamp(),
+                    `draw_date` date DEFAULT NULL,
+                    `placement` text NOT NULL,
+                    `sendmail` text NOT NULL,
+                    `no_of_winners` int NOT NULL,
+                    `prizes` text NOT NULL,
+                    `box_style` text NOT NULL,
+                    `winner_name` text NOT NULL,
+                    `winner_email` text NOT NULL,
+                    PRIMARY KEY (`id`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4"; 
     
                 dbDelta($sql_query_to_create_table);     

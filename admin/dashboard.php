@@ -1,10 +1,12 @@
-<?php include_once Lucky_Draw_Plugin_Path.'includes/topnav.php'; echo '</div>';  
-global $wpdb; 
+<?php global $wpdb; 
 
-?>
+if(isset($_POST["Lucky_Draw_Submit"])){
+  if(wp_kses_post(wp_unslash(isset($_POST["Lucky_Draw_Nonce_Field"])))&&wp_verify_nonce(wp_kses_post(wp_unslash($_POST["Lucky_Draw_Nonce_Field"])),'Lucky_Draw_Nonce')){ 
+    include_once Lucky_Draw_Plugin_Path.'includes/putvalues.php';
 
-<style>
-</style><?php
+}else {  die; }
+}
+
 $nonce= wp_nonce_url( home_url().'/wp-admin/admin.php?page=lucky-draw','URL_CHECK');
 
 $serialno=0;

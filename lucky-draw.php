@@ -1,10 +1,10 @@
 <?php
  if ( ! defined( 'ABSPATH' ) ) exit;
 /**
-Plugin Name: Lucky Draw 
+Plugin Name: Lucky Draw | DESIGN - REWARD - REPEAT. 
 
 Description: The **Lucky Draw Box Plugin** allows administrators to create exciting lucky draw events where participants can register for a chance to win fabulous prizes! This plugin offers an easy way to manage and style contests on your WordPress site with prize draws, fair random winner selection. 
-Version: 2.0.3
+Version: 3.0
 Author: Owais Khan
 Author URI: https://github.com/owaisk7
 License: GPLv2 or later
